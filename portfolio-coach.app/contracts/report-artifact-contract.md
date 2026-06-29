@@ -31,6 +31,7 @@ Example:
 | `DataStoreInventory.csv` | Datastore inventory tables (from core skill) |
 | `AccountCoverage.csv` | Account coverage profile |
 | `Metrics.csv` | Summary metrics |
+| `ReportSectionFragments.json` | Scaffold section text from core skill (agent merges into Report.md) |
 
 When `evaluation: true`, also include evaluation artifacts per the overlay and skill outputs (`ExitInterview.md`, `SourceProfileScorecard.md`).
 
@@ -38,6 +39,16 @@ When `evaluation: true`, also include evaluation artifacts per the overlay and s
 
 Minimum sections:
 
-1. **Datastore inventory** — core output from `datastore-inventory` skill
-2. **Appendix: Inputs Resolved** — final resolved playbook inputs
-3. **Evaluation** — present only when `evaluation: true` (overlay)
+1. **Datastore inventory** — merge `ReportSectionFragments.json` section1 and CSV quantification from `datastore-inventory` skill
+2. **Account coverage** — section2 fragment + `AccountCoverage.csv`
+3. **Activity coverage** — section3 fragment; agent may extend from canonical tables
+4. **Cash and income history** — section4 fragment; label confidence layers in narrative
+5. **Derived data quality** — section5 fragment + `Metrics.csv`
+6. **Appendix: Inputs Resolved** — final resolved playbook inputs
+7. **Evaluation** — present only when `evaluation: true` (overlay)
+
+Core skill outputs are **scaffold** (`outputCompleteness: scaffold`); the agent synthesizes narrative using fragments, CSVs, and canonical queries.
+
+## Post-run verification
+
+Self-verify per [APP post-run checklist](https://github.com/4jeffclark/agent-playbook-pack/blob/main/standard/post-run-checklist.md).

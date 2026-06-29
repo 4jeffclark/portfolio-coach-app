@@ -5,6 +5,8 @@ packId: portfolio-coach
 version: '1.0.0'
 description: Datastore inventory and quality profile for a confirmed analysis period.
 playbookReportId: SourceProfile
+defaultResolution:
+  period: fullAvailableRange
 inputs:
   evaluation:
     type: boolean
@@ -29,7 +31,7 @@ overlays:
 gates:
   - id: datastore-merge-complete
     after: datastore-merge-and-validate
-    description: Session attachments merged; canonical datastore validated
+    description: Session attachments merged or existing canonical validated
   - id: inputs-resolved
     after: structured-input-discovery
     description: Playbook inputs resolved or confirmed with defaults

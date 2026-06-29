@@ -1,6 +1,7 @@
 ---
 name: source-profile-insights
 compatibility: Requires Python 3.11+ when running bundled scripts
+outputCompleteness: scaffold
 description: Synthesize datastore insights, scorecard, and coverage readiness for source-profile evaluation overlay.
 metadata:
   packId: portfolio-coach
@@ -9,9 +10,9 @@ metadata:
 
 ## Procedure
 
-1. Optional developer/trader reflection on coverage gaps and export practices (not trading coaching)
-2. Document most useful insights the datastore supports
-3. Scorecard on coverage, quality, and export readiness
+1. Run `scripts/run.py` after `datastore-inventory` completes
+2. Read `SourceProfileScorecard.md` and merge into `Report.md` Evaluation section
+3. Add agent reflection on export gaps and coverage (scorecard provides quantitative baseline)
 
 ## Scripts
 
@@ -25,7 +26,9 @@ Run from this skill directory. Paths are relative to the skill root per [agentsk
 python scripts/run.py --datastore "$USER_DATASTORE" --workspace "$AGENT_WORKSPACE" --evaluation true
 ```
 
-Set `compatibility: Requires Python 3.11+` when the runtime must execute bundled scripts.
+```powershell
+python scripts/run.py --datastore $env:USER_DATASTORE --workspace $env:AGENT_WORKSPACE --evaluation true
+```
 
 ## References
 
@@ -33,7 +36,7 @@ None.
 
 ## Outputs
 
-- `SourceProfileScorecard.md`
+- `SourceProfileScorecard.md` — quantitative baseline; agent extends reflection narrative
 
 ## Used by
 

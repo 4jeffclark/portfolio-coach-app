@@ -3,7 +3,7 @@ kind: pack
 packId: portfolio-coach
 name: PortfolioCoach
 version: '1.0.0'
-description: Domain reference instance — source profile playbook for datastore inventory and quality review.
+description: Domain reference instance — source profile playbook; CSV/scaffold inventory with agent-authored narrative.
 license: TBD
 compatibility:
   agentSkills: '>=1.0'

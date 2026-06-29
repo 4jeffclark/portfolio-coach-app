@@ -1,10 +1,12 @@
 # PortfolioCoach APP
 
-Published **APP distribution repo** for PortfolioCoach — domain workflows for E*TRADE datastore inventory and quality review.
+Published **APP distribution repo** for PortfolioCoach — E*TRADE datastore inventory and quality profiling.
+
+Shipped scripts produce CSV indexes, metrics, and report section **scaffolds**. Agents synthesize narrative report sections and complete evaluation reflection. Full canonical rebuild tooling is **not** shipped in this version.
 
 | Pack | Description |
 | --- | --- |
-| [`portfolio-coach.app/`](portfolio-coach.app/) | Source profile playbook — datastore inventory and quality review |
+| [`portfolio-coach.app/`](portfolio-coach.app/) | Source profile playbook — datastore inventory and quality profile |
 
 ## Layout
 
@@ -16,14 +18,15 @@ portfolio-coach-app/
 
 Pack entry: [`portfolio-coach.app/pack.app.yaml`](portfolio-coach.app/pack.app.yaml).
 
-## Standards
+## APP standard (execution agents)
 
-APP format and execution rules are defined in the [APP Standards Workbench](https://github.com/4jeffclark/agent-playbook-pack):
+Read in order from the [APP Standards Workbench](https://github.com/4jeffclark/agent-playbook-pack):
 
-- Authoring standard: [`standard/app-authoring.md`](https://github.com/4jeffclark/agent-playbook-pack/blob/main/standard/app-authoring.md)
-- Reference instance (minimal): [`hello-world.app`](https://github.com/4jeffclark/agent-playbook-pack/tree/main/examples/hello-world.app)
+1. [Authoring standard](https://github.com/4jeffclark/agent-playbook-pack/blob/main/standard/app-authoring.md)
+2. [Execution guide](https://github.com/4jeffclark/agent-playbook-pack/blob/main/standard/app-execution.md)
+3. [Post-run checklist](https://github.com/4jeffclark/agent-playbook-pack/blob/main/standard/post-run-checklist.md)
 
-Execution agents learn APP from the workbench standard, then consume this repo's pack manifests and referenced layer artifacts. Pack `README.md` files are user welcome only — not execution authority.
+Then consume this repo's pack manifests and referenced layer artifacts. Pack `README.md` files are user welcome only — not execution authority.
 
 ## Try it
 
